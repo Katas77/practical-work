@@ -6,6 +6,23 @@ import java.util.Arrays;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
+        File my_file_dir = new File("C:/skilbox");
+        if (my_file_dir.canWrite())
+        {
+            System.out.println(my_file_dir.getAbsolutePath() + " can write.\n");
+        }
+        else
+        {
+            System.out.println(my_file_dir.getAbsolutePath() + " cannot write.\n");
+        }
+        if (my_file_dir.canRead())
+        {
+            System.out.println(my_file_dir.getAbsolutePath() + " can read.\n");
+        }
+        else
+        {
+            System.out.println(my_file_dir.getAbsolutePath() + " cannot read.\n");
+        }
 
         File file=new File("C:/");
         String[] fL=file.list(new FilenameFilter() {
@@ -18,7 +35,7 @@ public class Main {
         });
         Arrays.stream(fL).forEach(f-> System.out.println(f));
 
-        System.out.println(getF(new File("c:/")));
+        System.out.println(getF(new File("c:/skilbox")));
 
     }
 static public long getF(File folder)
